@@ -29,8 +29,9 @@ export SAVEHIST=$HISTSIZE
   PATH=$DOTFILES_PREFIX/local/bin:$PATH
 
   # for rubygems
-  PATH=$HOME/.gem/ruby/1.8/bin:$PATH
-  PATH=$HOME/.gem/ruby/1.9.1/bin:$PATH
+  
+
+  PATH=$HOME/.gem/ruby/$(ruby -e 'puts (RUBY_VERSION > "1.9.1") ? "1.9.1" : "1.8"')/bin:$PATH
 
   export PATH
 
