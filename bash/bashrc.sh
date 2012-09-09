@@ -21,3 +21,5 @@ source $DOTFILES_PREFIX/prefix/prefixrc.sh
   # autojump.bash
   # [[ -s $DOTFILES_PREFIX/local/autojump/etc/profile.d/autojump.bash ]] && \
   # source $DOTFILES_PREFIX/local/autojump/etc/profile.d/autojump.bash
+
+alias cd=pushd

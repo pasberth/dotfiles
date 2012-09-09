@@ -21,7 +21,7 @@ source $DOTFILES_PREFIX/.vendor/backd/backd.sh
 
 # Changing directory
 # ----------------------------------------------------------
-alias cd=pushd
+# alias cd=pushd
 alias _=popd
 alias __=backd
 alias ..=slipd
