@@ -1,0 +1,14 @@
+[user]
+	email = pasberth@gmail.com
+	name = pasberth
+
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	grep = auto
+
+[alias]
+	st = status
+	up = checkout
+	di = diff

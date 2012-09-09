@@ -1,0 +1,21 @@
+[submodule ".vendor/pathf"]
+	path = .vendor/pathf
+	url = git://github.com/pasberth/pathf.git
+[submodule ".vendor/autojump"]
+	path = .vendor/autojump
+	url = git://github.com/joelthelion/autojump.git
+[submodule ".vendor/auto-fu.zsh"]
+	path = .vendor/auto-fu.zsh
+	url = git://github.com/pasberth/auto-fu.zsh.git
+[submodule ".vendor/slipd"]
+	path = .vendor/slipd
+	url = git://github.com/pasberth/slipd.git
+[submodule ".vendor/backd"]
+	path = .vendor/backd
+	url = git://github.com/pasberth/backd.git
+[submodule ".vendor/promptway"]
+	path = .vendor/promptway
+	url = git://github.com/pasberth/promptway.git
+[submodule ".vendor/git"]
+	path = .vendor/git
+	url = git://github.com/git/git.git
