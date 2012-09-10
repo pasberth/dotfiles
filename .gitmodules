@@ -19,3 +19,9 @@
 [submodule ".vendor/git"]
 	path = .vendor/git
 	url = git://github.com/git/git.git
+[submodule ".vendor/neobundle.vim"]
+	path = .vendor/neobundle.vim
+	url = git://github.com/Shougo/neobundle.vim
+[submodule ".vendor/vimproc"]
+	path = .vendor/vimproc
+	url = git://github.com/Shougo/vimproc
