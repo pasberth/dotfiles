@@ -6,7 +6,7 @@
 # Initialize Shell Variables  Dotfiles
 # ----------------------------------------------------------
 
-if [ "${0%%/bin/zsh}" != "$0" ]; then
+if [ "$ZSH_EVAL_CONTEXT" = "file" ]; then
   SHELL=$0
   DOTFILES_PREFIX=`dirname $(dirname $(readlink -f ~/.zshrc))`
 elif [[ -z $DOTFILES_PREFIX ]]; then
