@@ -23,3 +23,6 @@ source $DOTFILES_PREFIX/prefix/prefixrc.sh
   # source $DOTFILES_PREFIX/local/autojump/etc/profile.d/autojump.bash
 
 alias cd=pushd
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

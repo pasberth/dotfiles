@@ -15,6 +15,7 @@
      anything
      auto-complete
      markdown-mode
+     scala-mode
      d-mode
      haskell-mode
      yaml-mode

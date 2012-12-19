@@ -1,4 +1,5 @@
 
+include Math
 autoload :Curses, "curses"
 
 require 'rubygems'
