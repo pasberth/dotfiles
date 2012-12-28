@@ -5,6 +5,10 @@ autoload -U add-zsh-hook
 # https://github.com/pasberth/promptway
 source $DOTFILES_PREFIX/.vendor/promptway/promptway.zsh
 
+# zsh-syntax-highlighting
+# https://github.com/zsh-users/zsh-syntax-highlighting
+source $DOTFILES_PREFIX/.vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # The Prompt Style
 # ----------------------------------------------------------
 
