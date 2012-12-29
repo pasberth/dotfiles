@@ -23,5 +23,5 @@ compdef _backd __
 # ----------------------------------------------------------
 setopt autocd
 setopt autopushd
-setopt pushdignoredups
+# setopt pushdignoredups
 setopt pushd_silent
