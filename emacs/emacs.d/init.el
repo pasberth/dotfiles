@@ -11,7 +11,9 @@
 (el-get 'sync)
 
 (setq emacs.d (file-name-directory load-file-name))
+(load (concat emacs.d "init/plugin.el"))
 (load (concat emacs.d "init/misc.el"))
+
 ;(add-to-list 'load-path emacs-d)
 ;(add-to-list 'load-path
 ;             (concat emacs-d "/site-lisp-24"))
