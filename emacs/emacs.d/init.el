@@ -1,45 +1,58 @@
-(setq emacs-d (file-name-directory load-file-name))
-(add-to-list 'load-path emacs-d)
-(add-to-list 'load-path
-             (concat emacs-d "/site-lisp-24"))
-(add-to-list 'load-path
-	     (concat emacs-d "/lib"))
+
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+(el-get 'sync)
+
+(setq emacs.d (file-name-directory load-file-name))
+(load (concat emacs.d "init/misc.el"))
+;(add-to-list 'load-path emacs-d)
+;(add-to-list 'load-path
+;             (concat emacs-d "/site-lisp-24"))
+;(add-to-list 'load-path
+;	     (concat emacs-d "/lib"))
 (add-to-list 'custom-theme-load-path
-	     (concat emacs-d "/lib-custome-theme"))
+	     (concat emacs.d "lib-custome-theme"))
 ;; fonts
-(if (display-graphic-p)
-    (set-fontset-font
-      (frame-parameter nil 'font)
-      'mule-unicode-0100-24ff
-      '("Bitstream Vera Sans Mono" . "iso10646-1")))
+;(if (display-graphic-p)
+;    (set-fontset-font
+;      (frame-parameter nil 'font)
+;      'mule-unicode-0100-24ff
+;      '("Bitstream Vera Sans Mono" . "iso10646-1")))
 
 ;; package.el
-(require 'package)
+;(require 'package)
 
 ;; Marmalade (Repository for the package.el)
-(add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/"))
-(setq package-user-dir (concat emacs-d ".vendor"))
-(package-initialize)
+;(add-to-list 'package-archives
+;	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+;(setq package-user-dir (concat emacs-d ".vendor"))
+;(package-initialize)
 
 ;; quickrun.el
-(require 'quickrun)
+;(require 'quickrun)
 
 ;; auto-complete.el
-(require 'auto-complete)
+;(require 'auto-complete)
 ;;(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
-(require 'auto-complete-config)
-(ac-config-default)
+;(require 'auto-complete-config)
+;(ac-config-default)
 
 ;; anything.el
-(require 'anything)
+;(require 'anything)
 
 ;; popwin.el
-(require 'popwin)
+;(require 'popwin)
 
 ;; markdown-mode.el
-(require 'markdown-mode)
-(require 'yaml-mode)
+;(require 'markdown-mode)
+;(require 'yaml-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -54,6 +67,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(require 'macra-mode)
-
-(setq-default tab-width 4 indent-tabs-mode nil)
+;(require 'macra-mode)
