@@ -22,6 +22,7 @@ source $DOTFILES_PREFIX/prefix/prefixrc.sh
 
 fpath=($DOTFILES_PREFIX/local/functions $fpath)
 
+source $DOTFILES_PREFIX/zsh/shortcuts.zsh
 source $DOTFILES_PREFIX/zsh/cd.zsh
 source $DOTFILES_PREFIX/zsh/prompt.zsh
 source $DOTFILES_PREFIX/zsh/keybinding.zsh
