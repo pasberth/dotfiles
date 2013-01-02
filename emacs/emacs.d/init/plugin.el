@@ -30,3 +30,10 @@
 ;(require 'yaml-mode)
 
 ;(require 'macra-mode)
+
+
+(unless (locate-library "undo-tree")
+  (el-get 'sync 'undo-tree))
+
+(when (require 'undo-tree nil t)
+  (global-undo-tree-mode))
