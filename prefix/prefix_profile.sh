@@ -33,6 +33,9 @@ export EDITOR=emacs
   # for rubygems
   PATH=$HOME/.gem/ruby/$(ruby -e 'puts (RUBY_VERSION > "1.9.1") ? "1.9.1" : "1.8"')/bin:$PATH
 
+  # for cabal
+  PATH=$HOME/.cabal/bin:$PATH
+
   export PATH
 
 # OS Dependencies
