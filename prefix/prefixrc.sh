@@ -36,6 +36,6 @@ alias ls='ls -B --color=auto'
 eval $(dircolors $DOTFILES_PREFIX/prefix/dir_colors -b)
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -P'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
