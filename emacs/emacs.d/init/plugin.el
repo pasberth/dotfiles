@@ -37,3 +37,8 @@
 
 (when (require 'undo-tree nil t)
   (global-undo-tree-mode))
+
+(unless (locate-library "haskell-mode")
+  (el-get 'sync 'haskell-mode))
+
+(require 'haskell-mode)
