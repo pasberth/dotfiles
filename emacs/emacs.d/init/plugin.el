@@ -42,3 +42,18 @@
   (el-get 'sync 'haskell-mode))
 
 (require 'haskell-mode)
+
+(unless (locate-library "d-mode")
+  (el-get 'sync 'd-mode))
+
+(require 'd-mode)
+
+(unless (locate-library "scala-mode")
+  (el-get 'sync 'scala-mode))
+
+(require 'scala-mode)
+
+(unless (locate-library "io-mode")
+  (el-get 'sync 'io-mode))
+
+(require 'io-mode)
