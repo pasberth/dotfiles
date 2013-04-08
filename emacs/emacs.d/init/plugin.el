@@ -57,3 +57,5 @@
   (el-get 'sync 'io-mode))
 
 (require 'io-mode)
+
+(el-get 'sync 'ProofGeneral)
