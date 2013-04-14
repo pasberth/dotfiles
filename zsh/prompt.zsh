@@ -35,16 +35,16 @@ SPROMPT="%F{red}もしかして:%f %U%B%F{blue}%r%f%b%u ? "
   # ........................................................
   add-zsh-hook precmd _rprompt2_precmd
   add-zsh-hook precmd _update_prompt_main
-  add-zsh-hook chpwd _update_promptway
+  add-zsh-hook chpwd promptway
   # add-zsh-hook precmd _update_vcs_info
 
 
   function _print_promptway () {
-    if [ -n "$PROMPT_BACKWARD" ]; then
-      echo $PROMPT_MAIN_CONCEALED',-- '$PROMPT_BACKWARD
-      echo $PROMPT_MAIN_CONCEALED'`-> '$PROMPT_WAY
+    if [ -n "$_prompt_backward" ]; then
+      echo $PROMPT_MAIN_CONCEALED',-- '$_prompt_backward
+      echo $PROMPT_MAIN_CONCEALED'`-> '$_prompt_way
     else
-      echo $PROMPT_MAIN_CONCEALED'   ['$PROMPT_WAY']'
+      echo $PROMPT_MAIN_CONCEALED'   ['$_prompt_way']'
     fi
   }
 
@@ -59,12 +59,6 @@ SPROMPT="%F{red}もしかして:%f %U%B%F{blue}%r%f%b%u ? "
     PROMPT_MAIN_CONCEALED="%{\e[8m%}$PROMPT_MAIN%{\e[m%}"
   }
 
-  function _update_promptway () {
-    promptway
-    PROMPT_WAY=$_prompt_way
-    PROMPT_BACKWARD=$_prompt_backward
-  }
-
   function _update_vcs_info () {
     vcs_info
     VCS_INFO=$vcs_info_msg_0_
@@ -72,7 +66,7 @@ SPROMPT="%F{red}もしかして:%f %U%B%F{blue}%r%f%b%u ? "
 
   # Initialize Variables
   # ........................................................
-  _update_promptway
+  promptway
   # _update_vcs_info # not necessary
 
 # View VCS information
