@@ -59,3 +59,10 @@
 (require 'io-mode)
 
 (el-get 'sync 'ProofGeneral)
+
+
+(unless (locate-library "clojure-mode")
+  (el-get 'sync 'clojure-mode))
+
+(require 'clojure-mode)
+
