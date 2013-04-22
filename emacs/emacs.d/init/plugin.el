@@ -66,3 +66,8 @@
 
 (require 'clojure-mode)
 
+(unless (locate-library "caml-mode")
+  (el-get 'sync 'caml-mode))
+
+(unless (locate-library "tuareg-mode")
+  (el-get 'sync 'tuareg-mode))
