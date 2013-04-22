@@ -56,7 +56,9 @@ SPROMPT="%F{red}もしかして:%f %U%B%F{blue}%r%f%b%u ? "
   function _update_prompt_main () {
     _update_vcs_info
     PROMPT_MAIN=$VCS_INFO
-    PROMPT_MAIN_CONCEALED="%{\e[8m%}$PROMPT_MAIN%{\e[m%}"
+    local a
+    a=$(echo $PROMPT_MAIN | perl -pe 's/%.(\{[^\}]*\})?//g')
+    PROMPT_MAIN_CONCEALED=$(perl -e "print ' ' x $#a")
   }
 
   function _update_vcs_info () {
@@ -75,8 +77,6 @@ autoload -U vcs_info
 
   # Git
   # ........................................................
-  # "%B .. %b" は %{\e[8m%} .. %{\e[m%} を打ち消してしまうので
-  # 使用しない事
   zstyle ":vcs_info:git:*" check-for-changes true
   zstyle ":vcs_info:git:*" formats "[%F{green}%c%u%b%f@%r]"
   zstyle ":vcs_info:git:*" actionformats "[%F{red}%b%f@%r]"
