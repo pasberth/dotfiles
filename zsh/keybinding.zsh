@@ -43,3 +43,5 @@ bindkey 'Z' recd
 
 #bindkey '^R' history-incremental-pattern-search-forward
 #bindkey '^S' history-incremental-pattern-search-backward
+
+source $DOTFILES_PREFIX/.vendor/zsh-history-substring-search/zsh-history-substring-search.zsh
