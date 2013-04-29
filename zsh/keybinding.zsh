@@ -35,8 +35,8 @@ function recd () {
 
 zle -N uncd
 zle -N recd
-bindkey '^z' uncd
-bindkey 'Z' recd
+# bindkey '^z' uncd
+# bindkey 'Z' recd
 
 # zle -N history-beginning-search-backward-end history-search-end
 # zle -N history-beginning-search-forward-end history-search-end
