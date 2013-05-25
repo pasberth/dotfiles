@@ -6,3 +6,5 @@
 export PATH=/usr/local/bin:$PATH
 
 export MAKEFILEPATH=/Applications/Xcode.app/Contents/Developer/Makefiles
+
+alias cabal='cabal --ghc-options=-L/usr/lib'
