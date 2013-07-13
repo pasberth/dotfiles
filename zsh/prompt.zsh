@@ -19,6 +19,12 @@ zstyle ':prompt:backward' enable t
 zstyle ':prompt:backward:dir' formats "%U%a%u"
 zstyle ':prompt:backward:dir:symlink' formats "%U%F{cyan}%a@%f%u"
 zstyle ':prompt:backward:way' formats "%a"
+zstyle ':prompt:truncate' symbol '… '
+zstyle ':prompt:truncate' max_length 40
+zstyle ":prompt:truncate" show_working_parent yes
+zstyle ":prompt:truncate" show_backward_parent yes
+zstyle ":prompt:truncate" show_slash_second_root yes
+zstyle ":prompt:truncate" show_home_second_root yes
 
 setopt prompt_subst
 setopt prompt_percent
