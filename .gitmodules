@@ -31,3 +31,6 @@
 [submodule ".vendor/zsh-history-substring-search"]
 	path = .vendor/zsh-history-substring-search
 	url = git://github.com/zsh-users/zsh-history-substring-search.git
+[submodule ".vendor/ghost"]
+	path = .vendor/ghost
+	url = git://github.com/pasberth/ghost.git
