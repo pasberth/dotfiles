@@ -41,7 +41,6 @@ SPROMPT="%F{red}もしかして:%f %U%B%F{blue}%r%f%b%u ? "
   # ........................................................
   add-zsh-hook precmd _rprompt2_precmd
   add-zsh-hook precmd _update_prompt_main
-  add-zsh-hook chpwd promptway
   # add-zsh-hook precmd _update_vcs_info
 
 
@@ -74,7 +73,6 @@ SPROMPT="%F{red}もしかして:%f %U%B%F{blue}%r%f%b%u ? "
 
   # Initialize Variables
   # ........................................................
-  promptway
   # _update_vcs_info # not necessary
 
 # View VCS information
