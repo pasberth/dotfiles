@@ -25,6 +25,10 @@ zstyle ":prompt:truncate" show_working_parent yes
 zstyle ":prompt:truncate" show_backward_parent yes
 zstyle ":prompt:truncate" show_slash_second_root yes
 zstyle ":prompt:truncate" show_home_second_root yes
+zstyle ':prompt:permission:dir' formats '%F{yellow}%a%b%f'
+zstyle ':prompt:permission:dir' non_owner_symbol '#'
+zstyle ':prompt:permission:backward' formats '%F{yellow}%a%b%f'
+zstyle ':prompt:permission:backward' non_owner_symbol '#'
 
 setopt prompt_subst
 setopt prompt_percent
