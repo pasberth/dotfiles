@@ -3,7 +3,7 @@
 	name = pasberth
 
 [color]
-	status = auto
+	status = always
 	diff = auto
 	branch = auto
 	grep = auto

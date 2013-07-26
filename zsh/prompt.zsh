@@ -47,7 +47,6 @@ SPROMPT="%F{red}もしかして:%f %U%B%F{blue}%r%f%b%u ? "
   add-zsh-hook precmd _update_prompt_main
   # add-zsh-hook precmd _update_vcs_info
 
-
   function _print_promptway () {
     if [ -n "$_prompt_backward" ]; then
       echo $PROMPT_MAIN_CONCEALED',-- '$_prompt_backward
@@ -68,6 +67,33 @@ SPROMPT="%F{red}もしかして:%f %U%B%F{blue}%r%f%b%u ? "
     local a
     a=$(echo $PROMPT_MAIN | perl -pe 's/%.(\{[^\}]*\})?//g')
     PROMPT_MAIN_CONCEALED=$(perl -e "print ' ' x $#a")
+  }
+
+  function _print_overview () {
+    echo
+    echo -e "\e[1m>>> ls\e[0m"
+
+    if [[ $(ls -C | wc -l) -ge 4 ]] ; then
+      ls -C --color=always | head -n3 | sed 's/^/| /'
+      #echo -e ":"
+      #ls -C --color=always | tail -n1 | sed 's/^/| /'
+        echo -e "\e[30;47mlines 1-3/$(ls -C | wc -l)\e[0m"
+    else
+      ls -C --color=always | sed 's/^/| /'
+    fi
+
+    if git status > /dev/null 2>&1 ; then
+      echo
+      echo -e "\e[1m>>> git status\e[0m"
+
+      if [[ $(git status | wc -l) -ge 10 ]] ; then
+        git status | head -n9 | sed 's/^/| /'
+        echo -e "\e[30;47mlines 1-9/$(git status | wc -l)\e[0m"
+        #git status | tail -n1 | sed 's/^/| /'
+      else
+        git status | sed 's/^/| /'
+      fi
+    fi
   }
 
   function _update_vcs_info () {
@@ -101,3 +127,38 @@ autoload -U vcs_info
   # ........................................................
   #zstyle ':vcs_info:*' max-exports 6
   #zstyle ':vcs_info:*' get-unapplied t
+
+# Ghost Windows
+# ----------------------------------------------------------
+
+  #export LESS="$LESS -w0 -h0"
+  ghost.exists $DOTFILES_PREFIX/ghost/overview || ghost.new $DOTFILES_PREFIX/ghost/overview -x 0 -y 3
+  ghost.open $DOTFILES_PREFIX/ghost/overview &
+
+  add-zsh-hook zshexit ghost-zshexit
+
+  function ghost-zshexit () {
+    ghost.close $DOTFILES_PREFIX/ghost/overview
+  }
+
+  zle -A .self-insert self-insert
+  zle -N self-insert
+
+  function self-insert () {
+    echo > $DOTFILES_PREFIX/ghost/overview/view
+    zle reset-prompt
+    zle .self-insert
+  }
+
+  function ghost-accept-line () {
+
+    if [[ -z $BUFFER ]] ; then
+      zle clear-screen
+      _print_overview > $DOTFILES_PREFIX/ghost/overview/view
+    else
+      zle accept-line
+    fi
+  }
+
+  zle -N ghost-accept-line
+  bindkey '^m' ghost-accept-line

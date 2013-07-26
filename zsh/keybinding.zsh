@@ -4,23 +4,6 @@
 
 # autoload -U history-search-end
 
-# http://d.hatena.ne.jp/kei_q/20110406/1302091565
-function alls () {
-  zle accept-line
-  if [[ -z "$BUFFER" ]]; then
-    echo
-    ls
-
-    # git ディレクトリなら status 表示
-    git status 2> /dev/null
-  fi
-
-  return 0
-}
-
-zle -N alls
-bindkey '^m' alls
-
 function uncd () {
   echo
   pushd ..

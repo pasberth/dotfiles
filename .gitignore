@@ -3,3 +3,4 @@
 *.zwc
 local/*
 !local/.gitkeep
+ghost

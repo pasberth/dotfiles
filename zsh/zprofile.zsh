@@ -17,3 +17,4 @@ fi
 source $DOTFILES_PREFIX/prefix/prefix_profile.sh
 
 export PATH=$DOTFILES_PREFIX/zsh/bin:$PATH
+export PATH=$DOTFILES_PREFIX/.vendor/ghost/bin:$PATH
