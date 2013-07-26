@@ -131,21 +131,25 @@ autoload -U vcs_info
 # Ghost Windows
 # ----------------------------------------------------------
 
+  GHOSTDIR=/tmp/dotfiles/$$/ghost
+  mkdir -p $GHOSTDIR
   #export LESS="$LESS -w0 -h0"
-  ghost.exists $DOTFILES_PREFIX/ghost/overview || ghost.new $DOTFILES_PREFIX/ghost/overview -x 0 -y 3
-  ghost.open $DOTFILES_PREFIX/ghost/overview &
+
+  # Overview window
+  ghost.new $GHOSTDIR/overview -x 0 -y 3
+  ghost.open $GHOSTDIR/overview &
 
   add-zsh-hook zshexit ghost-zshexit
 
   function ghost-zshexit () {
-    ghost.close $DOTFILES_PREFIX/ghost/overview
+    ghost.close $GHOSTDIR/overview
   }
 
   zle -A .self-insert self-insert
   zle -N self-insert
 
   function self-insert () {
-    echo > $DOTFILES_PREFIX/ghost/overview/view
+    echo > $GHOSTDIR/overview/view
     zle reset-prompt
     zle .self-insert
   }
@@ -154,7 +158,7 @@ autoload -U vcs_info
 
     if [[ -z $BUFFER ]] ; then
       zle clear-screen
-      _print_overview > $DOTFILES_PREFIX/ghost/overview/view
+      _print_overview > $GHOSTDIR/overview/view
     else
       zle accept-line
     fi
