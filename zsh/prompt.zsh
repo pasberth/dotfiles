@@ -19,12 +19,13 @@ zstyle ':prompt:backward' enable t
 zstyle ':prompt:backward:dir' formats "%U%a%u"
 zstyle ':prompt:backward:dir:symlink' formats "%U%F{cyan}%a@%f%u"
 zstyle ':prompt:backward:way' formats "%a"
-zstyle ':prompt:truncate' symbol '… '
-zstyle ':prompt:truncate' max_length 40
-zstyle ":prompt:truncate" show_working_parent yes
-zstyle ":prompt:truncate" show_backward_parent yes
-zstyle ":prompt:truncate" show_slash_second_root yes
-zstyle ":prompt:truncate" show_home_second_root yes
+zstyle ':prompt:truncate' enable t
+zstyle ':prompt:truncate' symbol '..'
+zstyle ':prompt:truncate' max_length 20
+zstyle ":prompt:truncate" show_working_parent t
+zstyle ":prompt:truncate" show_backward_parent t
+zstyle ":prompt:truncate" show_slash_second_root t
+zstyle ":prompt:truncate" show_home_second_root t
 zstyle ':prompt:permission:dir' formats ' %F{yellow}%b%B%a%%b%f'
 zstyle ':prompt:permission:dir' non_owner_symbol '#'
 zstyle ':prompt:permission:backward' formats ''
