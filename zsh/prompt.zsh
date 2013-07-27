@@ -146,7 +146,9 @@ autoload -U vcs_info
   }
 
   zle -A .self-insert self-insert
+  zle -A .accept-line accept-line
   zle -N self-insert
+  zle -N accept-line
 
   function self-insert () {
     echo > $GHOSTDIR/overview/view
@@ -154,15 +156,12 @@ autoload -U vcs_info
     zle .self-insert
   }
 
-  function ghost-accept-line () {
+  function accept-line () {
 
     if [[ -z $BUFFER ]] ; then
       zle clear-screen
       _print_overview > $GHOSTDIR/overview/view
     else
-      zle accept-line
+      zle .accept-line
     fi
   }
-
-  zle -N ghost-accept-line
-  bindkey '^m' ghost-accept-line
