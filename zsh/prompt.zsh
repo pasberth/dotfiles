@@ -26,6 +26,7 @@ zstyle ":prompt:truncate" show_working_parent t
 zstyle ":prompt:truncate" show_backward_parent t
 zstyle ":prompt:truncate" show_slash_second_root t
 zstyle ":prompt:truncate" show_home_second_root t
+zstyle ':prompt:truncate' show_named_dir_second_root t
 zstyle ':prompt:permission:dir' formats ' %F{yellow}%b%B%a%%b%f'
 zstyle ':prompt:permission:dir' non_owner_symbol '#'
 zstyle ':prompt:permission:backward' formats ''
